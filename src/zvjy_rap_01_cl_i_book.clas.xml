@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZVJY_RAP_01_CL_I_BOOK</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Behavior Implementation for ZVJY_RAP_01_I_BOOK</DESCRIPT>
+    <CATEGORY>06</CATEGORY>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+    <CLSDEFINT>ZVJY_RAP_01_I_BOOK</CLSDEFINT>
+   </VSEOCLASS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
