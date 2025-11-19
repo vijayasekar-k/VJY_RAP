@@ -1,0 +1,4 @@
+@EndUserText.label: 'ZSD_BOOK'
+define service ZSD_BOOK {
+  expose ZC_VJY_RAP_01_BOOK as book;
+}

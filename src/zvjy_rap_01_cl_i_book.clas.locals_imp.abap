@@ -31,10 +31,14 @@ CLASS lhc_ZVJY_RAP_01_I_BOOK IMPLEMENTATION.
 
     " Map entities to database structure
     lt_books = VALUE #( FOR entity IN entities (
-      book_id = entity-BookId
-      book_name = entity-BookName
-      book_author = entity-BookAuthor
-      book_pub_date = entity-BookPubDate
+*      book_id = entity-BookId
+*      book_name = entity-BookName
+*      book_author = entity-BookAuthor
+*      book_pub_date = entity-BookPubDate
+            book_id = '1'
+      book_name = 'ABCD'
+      book_author = 'AAAA'
+*      book_pub_date = entity-BookPubDate
     ) ).
 
     " Insert into database

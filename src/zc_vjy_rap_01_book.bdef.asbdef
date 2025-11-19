@@ -1,7 +1,7 @@
 projection;
 strict ( 2 );
 
-define behavior for ZC_VJY_RAP_01_BOOK //alias <alias_name>
+define behavior for ZC_VJY_RAP_01_BOOK
 {
   use create;
   use update;
