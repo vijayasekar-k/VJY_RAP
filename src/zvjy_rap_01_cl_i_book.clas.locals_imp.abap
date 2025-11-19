@@ -31,25 +31,21 @@ CLASS lhc_ZVJY_RAP_01_I_BOOK IMPLEMENTATION.
 
     " Map entities to database structure
     lt_books = VALUE #( FOR entity IN entities (
-*      book_id = entity-BookId
-*      book_name = entity-BookName
-*      book_author = entity-BookAuthor
-*      book_pub_date = entity-BookPubDate
-            book_id = '1'
-      book_name = 'ABCD'
-      book_author = 'AAAA'
-*      book_pub_date = entity-BookPubDate
+      book_id = entity-BookId
+      book_name = entity-BookName
+      book_author = entity-BookAuthor
+      book_pub_date = entity-BookPubDate
     ) ).
 
     " Insert into database
     INSERT zvjy_rap_01_book FROM TABLE @lt_books.
 
-*    " Handle response
-*    READ ENTITIES OF zvjy_rap_01_I_book IN LOCAL MODE
-*      ENTITY zvjy_rap_01_I_book
-*      ALL FIELDS WITH CORRESPONDING #( entities )
-*      RESULT DATA(lt_result).
-*
+    " Handle response
+    READ ENTITIES OF zvjy_rap_01_I_book IN LOCAL MODE
+      ENTITY zvjy_rap_01_I_book
+      ALL FIELDS WITH CORRESPONDING #( entities )
+      RESULT DATA(lt_result).
+
 *    result = VALUE #( FOR book IN lt_result (
 *      %cid = entities[ book_id = book-BookId ]-%cid
 *      %key = book-%key)).
@@ -90,6 +86,19 @@ CLASS lhc_ZVJY_RAP_01_I_BOOK IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD delete.
+  TYPES ty_book_id_range TYPE RANGE OF zvjy_rap_01_book-book_id.
+    DATA lt_book_ids TYPE ty_book_id_range.
+
+    lt_book_ids = VALUE #( FOR key IN keys (
+      sign   = 'I'
+      option = 'EQ'
+      low    = key-BookId ) ).
+
+    IF lt_book_ids IS NOT INITIAL.
+      DELETE FROM zvjy_rap_01_book
+        WHERE book_id IN @lt_book_ids.
+    ENDIF.
+
   ENDMETHOD.
 
   METHOD read.

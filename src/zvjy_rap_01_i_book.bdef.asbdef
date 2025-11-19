@@ -1,5 +1,5 @@
 unmanaged implementation in class ZVJY_RAP_01_CL_I_BOOK unique;
-strict ( 2 );
+strict ( 1 );
 
 define behavior for ZVJY_RAP_01_I_BOOK //alias <alias_name>
 //implementation in class ZVJY_RAP_01_CL_I_BOOK unique
@@ -11,5 +11,5 @@ authorization master ( global )
   create;
   update;
   delete;
-  field ( readonly ) BookId;
+  //field ( readonly ) BookId;
 }

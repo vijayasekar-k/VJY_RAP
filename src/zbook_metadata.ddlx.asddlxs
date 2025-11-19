@@ -1,30 +1,22 @@
 @Metadata.layer: #CORE
-
 annotate view ZC_VJY_RAP_01_BOOK with
 {
   @UI: {
-    lineItem:       [ { position: 10 } ],
-    identification: [ { position: 10 } ],
-    selectionField: [ { position: 10 } ]
+    facet: [
+      {
+        id: 'General',
+        type: #IDENTIFICATION_REFERENCE,
+        position: 10,
+        targetQualifier: 'Main'
+      }
+    ],
+    identification: [
+      { qualifier: 'Main', position: 10 }
+    ]
   }
   BookId;
 
-  @UI: {
-    lineItem:       [ { position: 20 } ],
-    identification: [ { position: 20 } ],
-    selectionField: [ { position: 20 } ]
-  }
-  BookName;
-
-  @UI: {
-    lineItem:       [ { position: 30 } ],
-    identification: [ { position: 30 } ]
-  }
-  BookAuthor;
-
-  @UI: {
-    lineItem:       [ { position: 40 } ],
-    identification: [ { position: 40 } ]
-  }
-  BookPubDate;
+  @UI.identification: [ { qualifier: 'Main', position: 20 } ] BookName;
+  @UI.identification: [ { qualifier: 'Main', position: 30 } ] BookAuthor;
+  @UI.identification: [ { qualifier: 'Main', position: 40 } ] BookPubDate;
 }
